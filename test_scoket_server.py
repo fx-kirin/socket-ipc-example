@@ -18,8 +18,8 @@ count = 0
 while True:
     r, w, e = select.select([client], [], [])
     for reader in r:
-        rsvmsg = reader.recv_into(tick)
-        # print rsvmsg
+        reader.recv_into(tick)
+        print tick
         count += 1
         
     if(count >= 1000):
